@@ -54,17 +54,18 @@ legend('f','fh','f2','f2h','Location','best');
 
 
 %% Question 3
-% plot the construction of a discrete fourier transform of the given
-% function 
+
 clc; close all; clear all;
 
+%Format g(x) = ..., 0 < x < p, my p was 2*pi
+%And they wanted 200 elements
 
-x = linspace(0,2*pi,200);
+x = linspace(0,2*pi,200); %200 elements
 
 N = length(x);
-f = 9*sin(15*pi*x) + 2*cos(8*pi*x);
+f = 2*sin(14*pi*x) + 9*cos(9*pi*x); %Your function given
 
-F = fft(f); 
+F = fft(f); %all this is from the tutorial
 
 abs_F = abs(fftshift(F));
 alpha = (0:N-1)-(N/2);
@@ -74,6 +75,6 @@ plot(alpha,abs_F);
 
 semilogy(alpha,abs_F);
 
-title('Ahmed Fuad Ali, 400075937');
-xlabel('x');
-ylabel('y');
+title('Vinayak Deshpande, 1302046');
+xlabel('X-AXIS');
+ylabel('Y-AXIS');
